@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>network-a-communication.md | Alex</title><meta name="description" content="network-a-communication.md"><meta name="keywords" content="network"><meta name="author" content="Alex"><meta name="copyright" content="Alex"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="network-a-communication.md"><meta name="twitter:description" content="network-a-communication.md"><meta name="twitter:image" content="https://herycs.github.io/img/post.jpg"><meta property="og:type" content="article"><meta property="og:title" content="network-a-communication.md"><meta property="og:url" content="https://herycs.github.io/2020/03/15/network-a-communication/"><meta property="og:site_name" content="Alex"><meta property="og:description" content="network-a-communication.md"><meta property="og:image" content="https://herycs.github.io/img/post.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = 'false'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://herycs.github.io/2020/03/15/network-a-communication/"><link rel="prev" title="network-a-directNet.md" href="https://herycs.github.io/2020/03/25/network-a-directNet/"><link rel="next" title="network-a-summary.md" href="https://herycs.github.io/2020/02/10/network-a-summary/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">28</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#network-通信"><span class="toc-number">1.</span> <span class="toc-text">network-通信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-数据通信"><span class="toc-number">2.</span> <span class="toc-text">1.数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1基础概念"><span class="toc-number">2.1.</span> <span class="toc-text">1.1基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2通信方式"><span class="toc-number">2.2.</span> <span class="toc-text">1.2通信方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3数据通信系统模型"><span class="toc-number">2.3.</span> <span class="toc-text">1.3数据通信系统模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4信道容量"><span class="toc-number">2.4.</span> <span class="toc-text">1.4信道容量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1Nyquist准则"><span class="toc-number">2.4.1.</span> <span class="toc-text">1.4.1Nyquist准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-1基础概念"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">1.4.1.1基础概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-2公式"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">1.4.1.2公式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-2Shannon定理"><span class="toc-number">2.4.2.</span> <span class="toc-text">1.4.2Shannon定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-1公式"><span class="toc-number">2.4.2.1.</span> <span class="toc-text">1.4.2.1公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3适用范围"><span class="toc-number">2.4.2.2.</span> <span class="toc-text">1.4.3适用范围</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-传输媒体"><span class="toc-number">3.</span> <span class="toc-text">2.传输媒体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1基础概念"><span class="toc-number">3.1.</span> <span class="toc-text">2.1基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2种类"><span class="toc-number">3.2.</span> <span class="toc-text">2.2种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1双绞线（TP，TwistedPair）"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.2.1双绞线（TP，TwistedPair）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-1结构"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">2.1.1.1结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-2分类"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">2.1.1.2分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2光纤"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2.2光纤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3无线电"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.2.3无线电</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3其他硬件"><span class="toc-number">3.3.</span> <span class="toc-text">2.3其他硬件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1RJ-45连接器"><span class="toc-number">3.3.1.</span> <span class="toc-text">2.3.1RJ-45连接器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2电缆"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.3.2电缆</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-1分类"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">2.3.2.1分类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-编码和复用"><span class="toc-number">4.</span> <span class="toc-text">3.编码和复用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1编码"><span class="toc-number">4.1.</span> <span class="toc-text">3.1编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2复用"><span class="toc-number">4.2.</span> <span class="toc-text">3.2复用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1频分复用"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1频分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2时分复用"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2时分复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3统计时分复用（动态时分）"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.2.3统计时分复用（动态时分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4波分复用（光互连的频分）"><span class="toc-number">4.2.4.</span> <span class="toc-text">3.2.4波分复用（光互连的频分）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5码分复用（扩频的空分）"><span class="toc-number">4.2.5.</span> <span class="toc-text">3.2.5码分复用（扩频的空分）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-交换技术"><span class="toc-number">5.</span> <span class="toc-text">4.交换技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1电路交换"><span class="toc-number">5.1.</span> <span class="toc-text">4.1电路交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2报文交换"><span class="toc-number">5.2.</span> <span class="toc-text">4.2报文交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3分组交换"><span class="toc-number">5.3.</span> <span class="toc-text">4.3分组交换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-数字传输技术"><span class="toc-number">6.</span> <span class="toc-text">5.数字传输技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1PCM"><span class="toc-number">6.1.</span> <span class="toc-text">5.1PCM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2时分复用"><span class="toc-number">6.2.</span> <span class="toc-text">5.2时分复用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-物理层概述"><span class="toc-number">7.</span> <span class="toc-text">6.物理层概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1概述"><span class="toc-number">7.1.</span> <span class="toc-text">6.1概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2主要特性"><span class="toc-number">7.2.</span> <span class="toc-text">6.2主要特性</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(/img/post.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Alex</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">network-a-communication.md</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-03-15 18:32:34"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2020-03-15</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-03-15 18:32:34"><i class="fa fa-history" aria-hidden="true"></i> Updated 2020-03-15</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/network/">network</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="network-通信"><a href="#network-通信" class="headerlink" title="network-通信"></a>network-通信</h1><h1 id="1-数据通信"><a href="#1-数据通信" class="headerlink" title="1.数据通信"></a>1.数据通信</h1><h2 id="1-1基础概念"><a href="#1-1基础概念" class="headerlink" title="1.1基础概念"></a>1.1基础概念</h2><ul>
+<li>数据：运输信息的实体</li>
+<li>信息：数据的的内容含义</li>
+<li>信号：数据的电气或电磁的表现</li>
+<li>数据、信号、信道均有模拟和数字两种形式</li>
+</ul>
+<h2 id="1-2通信方式"><a href="#1-2通信方式" class="headerlink" title="1.2通信方式"></a>1.2通信方式</h2><ul>
+<li>基带传输<ul>
+<li>信号依照原有形式通过数字信道传输（编码后的脉冲信号直接放信道上传输）<ul>
+<li>例如以太网</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>频带传输<ul>
+<li>基带信号调制成模拟信号传输，接收方需要解调<ul>
+<li>例如电话模拟信道传输</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>带宽传输<ul>
+<li>基带信号调制后形成的频分复用模拟信号</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3数据通信系统模型"><a href="#1-3数据通信系统模型" class="headerlink" title="1.3数据通信系统模型"></a>1.3数据通信系统模型</h2><ul>
+<li>源系统</li>
+<li>传输系统</li>
+<li>目的系统</li>
+</ul>
+<h2 id="1-4信道容量"><a href="#1-4信道容量" class="headerlink" title="1.4信道容量"></a>1.4信道容量</h2><h3 id="1-4-1Nyquist准则"><a href="#1-4-1Nyquist准则" class="headerlink" title="1.4.1Nyquist准则"></a>1.4.1Nyquist准则</h3><h4 id="1-4-1-1基础概念"><a href="#1-4-1-1基础概念" class="headerlink" title="1.4.1.1基础概念"></a>1.4.1.1基础概念</h4><ul>
+<li>理想低通信道（带宽为W Hz）最高码元传输速率：2W Baud，每秒两个码元</li>
+<li>理想带同信道最高码元传输速率：W Baud，每秒1个码元</li>
+<li>波特率：码元速率，单位时间通过信道的码元个数</li>
+</ul>
+<h4 id="1-4-1-2公式"><a href="#1-4-1-2公式" class="headerlink" title="1.4.1.2公式"></a>1.4.1.2公式</h4><ul>
+<li><p>$$<br>  C = 2Wlog2M<br>  $$</p>
+<blockquote>
+<p>M：信号状态个数</p>
+<p>W：信道宽度</p>
+</blockquote>
+</li>
+</ul>
+<p>单位转换：<br>$$<br>1 bps = (log2M) Baud<br>$$</p>
+<h3 id="1-4-2Shannon定理"><a href="#1-4-2Shannon定理" class="headerlink" title="1.4.2Shannon定理"></a>1.4.2Shannon定理</h3><h4 id="1-4-2-1公式"><a href="#1-4-2-1公式" class="headerlink" title="1.4.2.1公式"></a>1.4.2.1公式</h4><ul>
+<li><p>信道极限传输速率<br>  $$<br>  C=Wlog2(1+S/N)bps<br>  $$</p>
+<blockquote>
+<p>W：信道带宽</p>
+<p>S：信道内传输的信号的平均功率</p>
+<p>N：信道内部高斯噪声功率</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="1-4-3适用范围"><a href="#1-4-3适用范围" class="headerlink" title="1.4.3适用范围"></a>1.4.3适用范围</h4><ul>
+<li>输入信息—&gt;{源点—&gt;发送器}（源系统）—&gt;传输系统—&gt;{接收器—&gt;终点}–&gt;输出信息</li>
+<li>以上共六条传输段<ul>
+<li>Nyquist适用范围：（码元传输速率）3,4</li>
+<li>Shannon适用范围：（信息传输速率）2,3,4,5</li>
+</ul>
+</li>
+</ul>
+<h1 id="2-传输媒体"><a href="#2-传输媒体" class="headerlink" title="2.传输媒体"></a>2.传输媒体</h1><h2 id="2-1基础概念"><a href="#2-1基础概念" class="headerlink" title="2.1基础概念"></a>2.1基础概念</h2><ul>
+<li>物理链路：位于传输器/接收器之间的媒体</li>
+<li>引导型介质：信息在固体中传播</li>
+<li>非引导型介质：信息自由传播</li>
+</ul>
+<h2 id="2-2种类"><a href="#2-2种类" class="headerlink" title="2.2种类"></a>2.2种类</h2><h3 id="2-2-1双绞线（TP，TwistedPair）"><a href="#2-2-1双绞线（TP，TwistedPair）" class="headerlink" title="2.2.1双绞线（TP，TwistedPair）"></a>2.2.1双绞线（TP，TwistedPair）</h3><h4 id="2-1-1-1结构"><a href="#2-1-1-1结构" class="headerlink" title="2.1.1.1结构"></a>2.1.1.1结构</h4><ul>
+<li>两根相互绝缘的铜导线纽合而成</li>
+<li>扭矩越小干扰越强</li>
+</ul>
+<h4 id="2-1-1-2分类"><a href="#2-1-1-2分类" class="headerlink" title="2.1.1.2分类"></a>2.1.1.2分类</h4><ul>
+<li>屏蔽双绞线（STP，ShieldedTwistedPair）：外部包裹铝箔</li>
+<li>非屏蔽双绞线（UTP，UnshieldedTwistedPair）：外部包裹屏蔽</li>
+</ul>
+<h3 id="2-2-2光纤"><a href="#2-2-2光纤" class="headerlink" title="2.2.2光纤"></a>2.2.2光纤</h3><ul>
+<li>部件：光纤、光源和检测器</li>
+</ul>
+<h3 id="2-2-3无线电"><a href="#2-2-3无线电" class="headerlink" title="2.2.3无线电"></a>2.2.3无线电</h3><ul>
+<li><p>类型</p>
+<ul>
+<li>陆地微波</li>
+<li>LAN</li>
+<li>广域</li>
+<li>卫星</li>
+</ul>
+</li>
+<li><p>比较</p>
+<p>  <img src="/" class="lazyload" data-src="C:%5CUsers%5CANGLE0%5CPictures%5C%E8%AE%A1%E7%BD%91-%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F%E6%AF%94%E4%BB%B7.png"  alt=""></p>
+</li>
+</ul>
+<h2 id="2-3其他硬件"><a href="#2-3其他硬件" class="headerlink" title="2.3其他硬件"></a>2.3其他硬件</h2><h3 id="2-3-1RJ-45连接器"><a href="#2-3-1RJ-45连接器" class="headerlink" title="2.3.1RJ-45连接器"></a>2.3.1RJ-45连接器</h3><ul>
+<li>结构<ul>
+<li>插头（水晶头）+插孔</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-2电缆"><a href="#2-3-2电缆" class="headerlink" title="2.3.2电缆"></a>2.3.2电缆</h3><h4 id="2-3-2-1分类"><a href="#2-3-2-1分类" class="headerlink" title="2.3.2.1分类"></a>2.3.2.1分类</h4><ul>
+<li>50Ω同轴电缆（基带同轴电缆）<ul>
+<li>一条电缆只用于一条信道</li>
+<li>分类<ul>
+<li>细缆（Thinnet）：直径0.25英寸，传输距离185M，RG-58</li>
+<li>粗缆（Thicknet)：直径0.5英寸，传输距离500M，RG-8</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>75Ω同轴电缆（宽带同轴电缆），RG-59</li>
+</ul>
+<h1 id="3-编码和复用"><a href="#3-编码和复用" class="headerlink" title="3.编码和复用"></a>3.编码和复用</h1><h2 id="3-1编码"><a href="#3-1编码" class="headerlink" title="3.1编码"></a>3.1编码</h2><ul>
+<li>目的<ul>
+<li>为便于传输，提高安全性</li>
+</ul>
+</li>
+<li>分类<ul>
+<li>信源编码</li>
+<li>信道编码</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2复用"><a href="#3-2复用" class="headerlink" title="3.2复用"></a>3.2复用</h2><h3 id="3-2-1频分复用"><a href="#3-2-1频分复用" class="headerlink" title="3.2.1频分复用"></a>3.2.1频分复用</h3><ul>
+<li>用户占有频带后，同信过程中始终占用</li>
+<li>用户所有时间独占不同资源</li>
+</ul>
+<h3 id="3-2-2时分复用"><a href="#3-2-2时分复用" class="headerlink" title="3.2.2时分复用"></a>3.2.2时分复用</h3><ul>
+<li>用户轮流占用通信资源</li>
+</ul>
+<h3 id="3-2-3统计时分复用（动态时分）"><a href="#3-2-3统计时分复用（动态时分）" class="headerlink" title="3.2.3统计时分复用（动态时分）"></a>3.2.3统计时分复用（动态时分）</h3><h3 id="3-2-4波分复用（光互连的频分）"><a href="#3-2-4波分复用（光互连的频分）" class="headerlink" title="3.2.4波分复用（光互连的频分）"></a>3.2.4波分复用（光互连的频分）</h3><h3 id="3-2-5码分复用（扩频的空分）"><a href="#3-2-5码分复用（扩频的空分）" class="headerlink" title="3.2.5码分复用（扩频的空分）"></a>3.2.5码分复用（扩频的空分）</h3><h1 id="4-交换技术"><a href="#4-交换技术" class="headerlink" title="4.交换技术"></a>4.交换技术</h1><h2 id="4-1电路交换"><a href="#4-1电路交换" class="headerlink" title="4.1电路交换"></a>4.1电路交换</h2><ul>
+<li>t特征<ul>
+<li>分时方式占用通信资源</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>通信质量有保证</li>
+<li>传输时延小，无阻塞</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>连接时间较长，工作过程复杂</li>
+<li>工作效率可能低下</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2报文交换"><a href="#4-2报文交换" class="headerlink" title="4.2报文交换"></a>4.2报文交换</h2><ul>
+<li>特征<ul>
+<li>存储转发</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>无连接</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>报文长度不加限制，中间结点存储空间大</li>
+<li>报文在中间结点时延大</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3分组交换"><a href="#4-3分组交换" class="headerlink" title="4.3分组交换"></a>4.3分组交换</h2><ul>
+<li>长报文分为短数据块</li>
+</ul>
+<h1 id="5-数字传输技术"><a href="#5-数字传输技术" class="headerlink" title="5.数字传输技术"></a>5.数字传输技术</h1><h2 id="5-1PCM"><a href="#5-1PCM" class="headerlink" title="5.1PCM"></a>5.1PCM</h2><h2 id="5-2时分复用"><a href="#5-2时分复用" class="headerlink" title="5.2时分复用"></a>5.2时分复用</h2><ul>
+<li>E1复用30/32路</li>
+<li>T1复用24路</li>
+</ul>
+<h1 id="6-物理层概述"><a href="#6-物理层概述" class="headerlink" title="6.物理层概述"></a>6.物理层概述</h1><h2 id="6-1概述"><a href="#6-1概述" class="headerlink" title="6.1概述"></a>6.1概述</h2><ul>
+<li>物理层协议称为物理层规程<ul>
+<li>定义在各种连接计算机的传输媒体上原始比特的交互方式及其接口，不关心具体的物理设备和具体传输媒体差异</li>
+<li>屏蔽掉种类繁多的物理设备和传输媒体的差异，使得这些差异对上面的链路层透明</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-2主要特性"><a href="#6-2主要特性" class="headerlink" title="6.2主要特性"></a>6.2主要特性</h2><ul>
+<li>机械特性<ul>
+<li>指明接口所用接线器的形状和尺寸、引脚数目和排列方式，定义接插及锁紧方式</li>
+</ul>
+</li>
+<li>电气特性<ul>
+<li>指明在接口电缆的线路上出现的电压、电流等范围</li>
+</ul>
+</li>
+<li>功能特性<ul>
+<li>指明电路上出现的某一电平的电压信号表示何种意义，通信过程中完成何种功能</li>
+</ul>
+</li>
+<li>规程特性<ul>
+<li>指明对于不同功能的各种可能时间的出现顺序，是功能事件时序的描述</li>
+</ul>
+</li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Alex</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://herycs.github.io/2020/03/15/network-a-communication/">https://herycs.github.io/2020/03/15/network-a-communication/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/network/">network</a></div><div class="post_share"><div class="social-share" data-image="/img/post.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/03/25/network-a-directNet/"><img class="prev_cover lazyload" data-src="/img/post.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">network-a-directNet.md</div></div></a></div><div class="next-post pull_right"><a href="/2020/02/10/network-a-summary/"><img class="next_cover lazyload" data-src="/img/post.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">network-a-summary.md</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> Recommend</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/03/25/network-a-directNet/" title="network-a-directNet.md"><img class="relatedPosts_cover lazyload"data-src="/img/post.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-03-25</div><div class="relatedPosts_title">network-a-directNet.md</div></div></a></div><div class="relatedPosts_item"><a href="/2020/02/10/network-a-summary/" title="network-a-summary.md"><img class="relatedPosts_cover lazyload"data-src="/img/post.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-10</div><div class="relatedPosts_title">network-a-summary.md</div></div></a></div><div class="relatedPosts_item"><a href="/2020/05/20/network-a-interconnection/" title="network-a-interconnection.md"><img class="relatedPosts_cover lazyload"data-src="/img/post.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-20</div><div class="relatedPosts_title">network-a-interconnection.md</div></div></a></div></div><div class="clear_both"></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Alex</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="Read Mode"></i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><i class="fa fa-list-ul close" id="mobile-toc-button" title="Table of Contents" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
