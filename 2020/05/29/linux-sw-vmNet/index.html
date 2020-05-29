@@ -125,8 +125,13 @@ function activateLightMode(){
 <li>初始策略为，虚拟机群<strong>只能与主机</strong>通信，通过主机实现和外网的联通</li>
 <li>若希望虚拟机群拥有和外网联通的能力，则可将主机网卡共享给VMnet1</li>
 </ul>
-<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>无论是采用以上哪种方式，我们的虚拟主机都是需要通过VM提供的网络服务进行通讯，而如何和外网连通和主机网卡连通这是VM的事，配置文件时虚拟机内部的配置文件目标是链接到VM当前网络设备下的网络设备上，故虚拟机的配置目标是能和VM提供的网络服务打通。</p>
-<p>VM的网络配置任务是和主机的网卡打通以支持对外网的访问，和主机打通以提供虚拟机和主机间的交互</p>
+<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>无论是采用以上哪种方式，我们的虚拟主机都是需要通过VM提供的网络服务进行通讯，而如何和外网连通和主机网卡连通这是VM的事，配置文件时虚拟机内部的配置文件目标是链接到VM当前网络环境下的网络设备上，故虚拟机的配置目标是能和VM提供的网络服务打通。</p>
+<p>简单来说：</p>
+<ul>
+<li>VM的网络配置器：<strong>VM软件</strong>和<strong>主机的网卡</strong>打通以支持<strong>对外网</strong>的访问，此过程成功后连上VM就是连通了外网</li>
+<li>虚拟机和VM网络连通：将<strong>虚拟机的网卡</strong>和<strong>VM的网络配置器</strong>连通得到<em>VM提供</em>的<strong>外网访问</strong>能力，</li>
+<li>虚拟机和主机打通：以提供<strong>虚拟机</strong>和<strong>主机</strong>间的交互，此过程成功后就可和主机进行交互</li>
+</ul>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置网络适配器"><a href="#配置网络适配器" class="headerlink" title="配置网络适配器"></a>配置网络适配器</h3><blockquote>
 <p>操作环境：Windows 网络适配器</p>
 </blockquote>
@@ -198,7 +203,7 @@ function activateLightMode(){
 <p>​    vim /etc/resolv.conf</p>
 </blockquote>
 <h4 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h4><blockquote>
-<p>流程同上区别就是操作文件位置不同，具体检索以上版本对于的配置文件位置</p>
+<p>流程同上区别就是操作文件位置不同，具体检索以上版本对应的配置文件位置</p>
 </blockquote>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="本地连接虚拟机失败"><a href="#本地连接虚拟机失败" class="headerlink" title="本地连接虚拟机失败"></a>本地连接虚拟机失败</h3><p>开启ssh</p>
 <p>sudo /etc/init.d/ssh start</p>
