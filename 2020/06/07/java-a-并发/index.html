@@ -81,7 +81,7 @@ function activateLightMode(){
 .justified-gallery img{
   opacity: 1
 }
-</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">36</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#并发"><span class="toc-number">1.</span> <span class="toc-text">并发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-内存模型"><span class="toc-number">3.</span> <span class="toc-text">Java 内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信"><span class="toc-number">3.1.</span> <span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程同步"><span class="toc-number">3.2.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-number">3.3.</span> <span class="toc-text">Java</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通信方式"><span class="toc-number">3.3.1.</span> <span class="toc-text">通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javan内存模型（JMM）"><span class="toc-number">3.3.2.</span> <span class="toc-text">Javan内存模型（JMM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重排序"><span class="toc-number">3.3.3.</span> <span class="toc-text">重排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#流程"><span class="toc-number">3.3.3.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JMM应对策略"><span class="toc-number">3.3.3.2.</span> <span class="toc-text">JMM应对策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#处理器重排序规则"><span class="toc-number">3.3.3.3.</span> <span class="toc-text">处理器重排序规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内存屏障类型"><span class="toc-number">3.3.3.4.</span> <span class="toc-text">内存屏障类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重排序规则"><span class="toc-number">3.3.4.</span> <span class="toc-text">重排序规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#happens-before"><span class="toc-number">3.3.4.1.</span> <span class="toc-text">happens-before</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#as-if-serial"><span class="toc-number">3.3.4.2.</span> <span class="toc-text">as-if-serial</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#语义"><span class="toc-number">3.3.4.2.1.</span> <span class="toc-text">语义</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序一致性"><span class="toc-number">3.4.</span> <span class="toc-text">顺序一致性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">3.4.1.</span> <span class="toc-text">特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步程序"><span class="toc-number">3.4.2.</span> <span class="toc-text">同步程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非同步程序"><span class="toc-number">3.4.3.</span> <span class="toc-text">非同步程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的技术支持"><span class="toc-number">4.</span> <span class="toc-text">Java中的技术支持</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile"><span class="toc-number">4.1.</span> <span class="toc-text">volatile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语义-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征-1"><span class="toc-number">4.1.2.</span> <span class="toc-text">特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读写"><span class="toc-number">4.1.3.</span> <span class="toc-text">读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存语义实现"><span class="toc-number">4.1.4.</span> <span class="toc-text">内存语义实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语义底层变换"><span class="toc-number">4.1.5.</span> <span class="toc-text">语义底层变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile使用优化"><span class="toc-number">4.1.6.</span> <span class="toc-text">volatile使用优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized"><span class="toc-number">4.2.</span> <span class="toc-text">synchronized</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用"><span class="toc-number">4.2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方式"><span class="toc-number">4.2.2.</span> <span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现"><span class="toc-number">4.2.3.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在位置"><span class="toc-number">4.2.4.</span> <span class="toc-text">存在位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁的优化"><span class="toc-number">4.2.5.</span> <span class="toc-text">锁的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#偏向锁"><span class="toc-number">4.2.5.1.</span> <span class="toc-text">偏向锁</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取锁"><span class="toc-number">4.2.5.1.1.</span> <span class="toc-text">获取锁</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#撤销"><span class="toc-number">4.2.5.1.2.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JVM参数"><span class="toc-number">4.2.5.1.3.</span> <span class="toc-text">JVM参数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#轻量级锁"><span class="toc-number">4.2.5.2.</span> <span class="toc-text">轻量级锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自旋锁"><span class="toc-number">4.2.5.3.</span> <span class="toc-text">自旋锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重量级锁"><span class="toc-number">4.2.5.4.</span> <span class="toc-text">重量级锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#锁消除"><span class="toc-number">4.2.5.5.</span> <span class="toc-text">锁消除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#锁对比"><span class="toc-number">4.2.5.6.</span> <span class="toc-text">锁对比</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原子操作实现原理"><span class="toc-number">5.</span> <span class="toc-text">原子操作实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#处理器操作"><span class="toc-number">5.1.</span> <span class="toc-text">处理器操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java实现原子操作"><span class="toc-number">5.2.</span> <span class="toc-text">Java实现原子操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式"><span class="toc-number">5.2.1.</span> <span class="toc-text">方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">5.2.2.</span> <span class="toc-text">问题</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(/img/post.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Alex</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">java-a-并发</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-07 16:41:16"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2020-06-07</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-06-07 16:41:16"><i class="fa fa-history" aria-hidden="true"></i> Updated 2020-06-07</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/java/">java</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>上下文切换：任务从保存到再次加载的过程</p>
+</style></noscript><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">36</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">16</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#并发"><span class="toc-number">1.</span> <span class="toc-text">并发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类延迟加载"><span class="toc-number">3.</span> <span class="toc-text">类延迟加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双重检查锁"><span class="toc-number">3.1.</span> <span class="toc-text">双重检查锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化"><span class="toc-number">3.2.</span> <span class="toc-text">初始化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的多线程"><span class="toc-number">4.</span> <span class="toc-text">Java中的多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述-1"><span class="toc-number">4.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#采用多线程原因"><span class="toc-number">4.1.1.</span> <span class="toc-text">采用多线程原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程优先级"><span class="toc-number">4.1.2.</span> <span class="toc-text">线程优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java中的线程状态"><span class="toc-number">4.1.3.</span> <span class="toc-text">java中的线程状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程状态切换"><span class="toc-number">4.1.4.</span> <span class="toc-text">线程状态切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Daemon线程"><span class="toc-number">4.2.</span> <span class="toc-text">Daemon线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程使用"><span class="toc-number">4.3.</span> <span class="toc-text">线程使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构建"><span class="toc-number">4.3.1.</span> <span class="toc-text">构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动"><span class="toc-number">4.3.2.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断"><span class="toc-number">4.3.3.</span> <span class="toc-text">中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止"><span class="toc-number">4.3.4.</span> <span class="toc-text">终止</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信模型"><span class="toc-number">4.4.</span> <span class="toc-text">线程通信模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-number">4.4.1.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#等待-通知"><span class="toc-number">4.4.2.</span> <span class="toc-text">等待&#x2F;通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管道输入和输出流"><span class="toc-number">4.4.3.</span> <span class="toc-text">管道输入和输出流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Join"><span class="toc-number">4.4.4.</span> <span class="toc-text">Join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal"><span class="toc-number">4.4.5.</span> <span class="toc-text">ThreadLocal</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-内存模型"><span class="toc-number">5.</span> <span class="toc-text">Java 内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程通信"><span class="toc-number">5.1.</span> <span class="toc-text">线程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程同步"><span class="toc-number">5.2.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通信方式"><span class="toc-number">5.3.</span> <span class="toc-text">通信方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Javan内存模型（JMM）"><span class="toc-number">5.4.</span> <span class="toc-text">Javan内存模型（JMM）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重排序"><span class="toc-number">5.5.</span> <span class="toc-text">重排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#流程"><span class="toc-number">5.5.1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JMM应对策略"><span class="toc-number">5.5.2.</span> <span class="toc-text">JMM应对策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理器重排序规则"><span class="toc-number">5.5.3.</span> <span class="toc-text">处理器重排序规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存屏障类型"><span class="toc-number">5.5.4.</span> <span class="toc-text">内存屏障类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重排序规则"><span class="toc-number">5.5.5.</span> <span class="toc-text">重排序规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#happens-before"><span class="toc-number">5.5.5.1.</span> <span class="toc-text">happens-before</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#相关规则"><span class="toc-number">5.5.5.1.1.</span> <span class="toc-text">相关规则</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JMM的处理"><span class="toc-number">5.5.5.1.2.</span> <span class="toc-text">JMM的处理</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#as-if-serial"><span class="toc-number">5.5.5.2.</span> <span class="toc-text">as-if-serial</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#语义"><span class="toc-number">5.5.5.2.1.</span> <span class="toc-text">语义</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序一致性"><span class="toc-number">5.6.</span> <span class="toc-text">顺序一致性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征"><span class="toc-number">5.6.1.</span> <span class="toc-text">特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步程序"><span class="toc-number">5.6.2.</span> <span class="toc-text">同步程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非同步程序"><span class="toc-number">5.6.3.</span> <span class="toc-text">非同步程序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的技术支持"><span class="toc-number">6.</span> <span class="toc-text">Java中的技术支持</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile"><span class="toc-number">6.1.</span> <span class="toc-text">volatile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语义-1"><span class="toc-number">6.1.1.</span> <span class="toc-text">语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特征-1"><span class="toc-number">6.1.2.</span> <span class="toc-text">特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#读写"><span class="toc-number">6.1.3.</span> <span class="toc-text">读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存语义实现"><span class="toc-number">6.1.4.</span> <span class="toc-text">内存语义实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java的CAS"><span class="toc-number">6.1.5.</span> <span class="toc-text">java的CAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile使用优化"><span class="toc-number">6.1.6.</span> <span class="toc-text">volatile使用优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized"><span class="toc-number">6.2.</span> <span class="toc-text">synchronized</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用"><span class="toc-number">6.2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方式"><span class="toc-number">6.2.2.</span> <span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现"><span class="toc-number">6.2.3.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在位置"><span class="toc-number">6.2.4.</span> <span class="toc-text">存在位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锁的优化"><span class="toc-number">6.2.5.</span> <span class="toc-text">锁的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#偏向锁"><span class="toc-number">6.2.5.1.</span> <span class="toc-text">偏向锁</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取锁"><span class="toc-number">6.2.5.1.1.</span> <span class="toc-text">获取锁</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#撤销"><span class="toc-number">6.2.5.1.2.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JVM参数"><span class="toc-number">6.2.5.1.3.</span> <span class="toc-text">JVM参数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#轻量级锁"><span class="toc-number">6.2.5.2.</span> <span class="toc-text">轻量级锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自旋锁"><span class="toc-number">6.2.5.3.</span> <span class="toc-text">自旋锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重量级锁"><span class="toc-number">6.2.5.4.</span> <span class="toc-text">重量级锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#锁消除"><span class="toc-number">6.2.5.5.</span> <span class="toc-text">锁消除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#锁对比"><span class="toc-number">6.2.5.6.</span> <span class="toc-text">锁对比</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final"><span class="toc-number">6.3.</span> <span class="toc-text">final</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重排序规则-1"><span class="toc-number">6.3.1.</span> <span class="toc-text">重排序规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#编译器和处理器"><span class="toc-number">6.3.1.1.</span> <span class="toc-text">编译器和处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#写final域"><span class="toc-number">6.3.1.2.</span> <span class="toc-text">写final域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#读final域"><span class="toc-number">6.3.1.3.</span> <span class="toc-text">读final域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存语义"><span class="toc-number">6.3.2.</span> <span class="toc-text">内存语义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原子操作实现原理"><span class="toc-number">7.</span> <span class="toc-text">原子操作实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#处理器操作"><span class="toc-number">7.1.</span> <span class="toc-text">处理器操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java实现原子操作"><span class="toc-number">7.2.</span> <span class="toc-text">Java实现原子操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方式"><span class="toc-number">7.2.1.</span> <span class="toc-text">方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-number">7.2.2.</span> <span class="toc-text">问题</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(/img/post.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">Alex</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> List</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/documents"><i class="fa-fw fa fa-music"></i><span> Documents</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">java-a-并发</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-06-07 16:41:16"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2020-06-07</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-06-07 16:41:16"><i class="fa fa-history" aria-hidden="true"></i> Updated 2020-06-07</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/java/">java</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>上下文切换：任务从保存到再次加载的过程</p>
 <p>并发和并行：</p>
 <blockquote>
 <p>​        如果某个系统支持两个或者多个动作（Action）<strong>同时存在</strong>，那么这个系统就是一个<strong>并发系统</strong>。如果某个系统支持两个或者多个动作<strong>同时执行</strong>，那么这个系统就是一个<strong>并行系统</strong>。并发系统与并行系统这两个定义之间的关键差异在于<strong>“存在”</strong>这个词。</p>
@@ -117,6 +117,98 @@ function activateLightMode(){
 <li>信号量 semaphore</li>
 <li>套接字 socket</li>
 </ol>
+<h1 id="类延迟加载"><a href="#类延迟加载" class="headerlink" title="类延迟加载"></a>类延迟加载</h1><h2 id="双重检查锁"><a href="#双重检查锁" class="headerlink" title="双重检查锁"></a>双重检查锁</h2><ul>
+<li><p>问题</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleCheckedLocking</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> DoubleCheckedLocking doubleCheckedLocking;</span><br><span class="line">    <span class="comment">//    双重检查锁（存在问题）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DoubleCheckedLocking <span class="title">getInstance2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (doubleCheckedLocking == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (DoubleCheckedLocking<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (doubleCheckedLocking == <span class="keyword">null</span>)&#123;</span><br><span class="line">                    doubleCheckedLocking = <span class="keyword">new</span> DoubleCheckedLocking();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 执行到此可能存在问题：</span></span><br><span class="line"><span class="comment">         *  1.doubleCheckedLocking可能未初始化结束</span></span><br><span class="line"><span class="comment">         *      类初始化</span></span><br><span class="line"><span class="comment">         *      &#123;</span></span><br><span class="line"><span class="comment">         *          malloc()//分配空间-1</span></span><br><span class="line"><span class="comment">         *          init()//初始化-2</span></span><br><span class="line"><span class="comment">         *          changeRef()//修改指针指向分配空间-3</span></span><br><span class="line"><span class="comment">         *      &#125;</span></span><br><span class="line"><span class="comment">         *      上述，2,3并无绝对顺序，并且2,3间的重排序并不违反Java语言规范的要求,但此时返回的实例却不是一个正确的实例</span></span><br><span class="line"><span class="comment">         * */</span></span><br><span class="line">        <span class="keyword">return</span> doubleCheckedLocking;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优化（这种方式相对于类加载的初始化操作而言操作，还可以延迟初始化<strong>实例字段</strong>）</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//    双重检查锁-优化</span></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 具体操作：使用 volatile 修饰变量，确保其初始化先于instance指针对地址的指向</span></span><br><span class="line"><span class="comment">  * */</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">volatile</span> DoubleCheckedLocking doubleCheckedLocking2;</span><br><span class="line">    </span><br><span class="line"> <span class="function"><span class="keyword">public</span> DoubleCheckedLocking2 <span class="title">getInstance3</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span> (doubleCheckedLocking2 == <span class="keyword">null</span>)&#123;</span><br><span class="line">         <span class="keyword">synchronized</span> (DoubleCheckedLocking<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">             <span class="keyword">if</span> (doubleCheckedLocking2 == <span class="keyword">null</span>)&#123;</span><br><span class="line">                 doubleCheckedLocking2 = <span class="keyword">new</span> DoubleCheckedLocking2();</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> doubleCheckedLocking2;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><blockquote>
+<p>处理本质是不阻止类初始化过程的重排序，而是在初始化结束之前并不暴露对象的引用</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassInit</span> </span>&#123;</span><br><span class="line">    <span class="comment">//定义在：class中的静态变量会在类初始化时交由JVM操作（而这是线程安全的,初始化时会去获取类的初始化锁）</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InstanceHolder</span></span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> ClassInit classInit = <span class="keyword">new</span> ClassInit();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取实例方法：直接调用静态内部类中的静态实例即可</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ClassInit <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> InstanceHolder.classInit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Java中的多线程"><a href="#Java中的多线程" class="headerlink" title="Java中的多线程"></a>Java中的多线程</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>启动一个简单的mian打印操作，会启动其他的多个线程，包括给JVM发送消息的，调用对象finalize方法的，清除引用的等等。</li>
+</ul>
+<h3 id="采用多线程原因"><a href="#采用多线程原因" class="headerlink" title="采用多线程原因"></a>采用多线程原因</h3><ul>
+<li>处理核心越来越多</li>
+<li>响应时间更快</li>
+<li>编程模型更加友好</li>
+</ul>
+<h3 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h3><ul>
+<li>priority（取值范围：0-9，默认5）</li>
+</ul>
+<h3 id="java中的线程状态"><a href="#java中的线程状态" class="headerlink" title="java中的线程状态"></a>java中的线程状态</h3><ul>
+<li>运行：RUNNABLE(RUNNING),READY</li>
+<li>等待：WAITING</li>
+<li>超时等待：TIMED_WAITING</li>
+<li>阻塞：BLOCKED</li>
+<li>终止：TERMINATED</li>
+</ul>
+<h3 id="线程状态切换"><a href="#线程状态切换" class="headerlink" title="线程状态切换"></a>线程状态切换</h3><ol>
+<li>实例化（new）</li>
+<li>运行（Thread.start())<ol>
+<li>就绪<ol>
+<li>运行=&gt;就绪（yield())</li>
+<li>运行&lt;=就绪（系统调度)</li>
+</ol>
+</li>
+<li>等待<ol>
+<li>运行=&gt;等待（Object.wait(), Object.join(), LockSupport.park())</li>
+<li>运行&lt;=等待（Object.notify(), Object.notifyAll(), LockSupport.unpark(Thread)）</li>
+</ol>
+</li>
+<li>超时等待<ol>
+<li>运行=&gt;超时等待（Thread.sleep(long), Object.wait(long), Thread.join(long), LockSupport.parkNanos(), LockSupport.parkUtil()）</li>
+<li>运行&lt;=超时等待（Object.notify(), Object.notifyAll(), LockSupport.unpark(Thread)）</li>
+</ol>
+</li>
+<li>阻塞<ol>
+<li>运行=&gt;阻塞（进入锁synchroized块）</li>
+<li>运行&lt;=阻塞（获取锁成功）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>终止（执行完成）</li>
+</ol>
+<h2 id="Daemon线程"><a href="#Daemon线程" class="headerlink" title="Daemon线程"></a>Daemon线程</h2><blockquote>
+<p>支持性线程，JVM中无Daemon线程时会退出，设置线程为Daemon需要在启动之前设置</p>
+</blockquote>
+<p>JVM退出时，Daemon中的finally块并不一定会执行</p>
+<h2 id="线程使用"><a href="#线程使用" class="headerlink" title="线程使用"></a>线程使用</h2><h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><p>线程创建会继承父线程的以下信息：是否Daemon,优先级，加载资源的contextClassLoader和可继承的ThreadLocal</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>start()    当前线程同步告知虚拟机，若线程规划器空闲，则立刻启动调用start()的线程</p>
+<h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><ul>
+<li>其他线程中断此线程interrupt()</li>
+<li>线程检查自身是否被中断isInterrupted()<ul>
+<li>线程终结，此方法返回false</li>
+<li>需要抛出InterruptedException，JVM会将线程inerrupt的标志位清除，随后抛出异常，此后调用判断方法将返回false</li>
+</ul>
+</li>
+</ul>
+<h3 id="终止"><a href="#终止" class="headerlink" title="终止"></a>终止</h3><ul>
+<li>通过中断或cancle()方法这种操作线程的方式可以使线程在终止时有机会清理资源</li>
+</ul>
+<h2 id="线程通信模型"><a href="#线程通信模型" class="headerlink" title="线程通信模型"></a>线程通信模型</h2><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
+<li>volatile</li>
+<li>synchroized</li>
+</ul>
+<h3 id="等待-通知"><a href="#等待-通知" class="headerlink" title="等待/通知"></a>等待/通知</h3><ul>
+<li>可使用操作，唤醒在某个对象上等待的线程（notify()唤醒一个，notifyAll()唤醒所有）</li>
+</ul>
+<h3 id="管道输入和输出流"><a href="#管道输入和输出流" class="headerlink" title="管道输入和输出流"></a>管道输入和输出流</h3><ul>
+<li>用于线程间交互，传输媒介为内存4</li>
+</ul>
+<h3 id="Join"><a href="#Join" class="headerlink" title="Join()"></a>Join()</h3><ul>
+<li>thread.join(),线程thread终止后才可返回</li>
+</ul>
+<h3 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h3><ul>
+<li>可以附在线程上的K-V对，k = ThreadLocal, v = 任意对象</li>
+</ul>
 <h1 id="Java-内存模型"><a href="#Java-内存模型" class="headerlink" title="Java 内存模型"></a>Java 内存模型</h1><blockquote>
 <p>并发编程关键问题</p>
 <ul>
@@ -131,20 +223,20 @@ function activateLightMode(){
 </blockquote>
 <p>共享内存并发模型中：显式同步</p>
 <p>消息传递并发模型中：隐式同步</p>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h3><p>java中并发采用共享内存模型，线程间通信采用隐式通信</p>
-<h3 id="Javan内存模型（JMM）"><a href="#Javan内存模型（JMM）" class="headerlink" title="Javan内存模型（JMM）"></a>Javan内存模型（JMM）</h3><blockquote>
+<h2 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h2><p>java中并发采用共享内存模型，线程间通信采用隐式通信</p>
+<h2 id="Javan内存模型（JMM）"><a href="#Javan内存模型（JMM）" class="headerlink" title="Javan内存模型（JMM）"></a>Javan内存模型（JMM）</h2><blockquote>
 <p>JMM负责线程间通信，并决定一个线程对共享变量的操作何时对另一个线程可见</p>
 <p>java中实例域，静态域，数组元素都存储在堆内存（线程间共享）</p>
 </blockquote>
 <p>JMM管控了线程的本地内存（JMM中抽象概念，涵盖缓存，写缓冲区，寄存器，其他硬件和编译器优化）到主内存间的数据传递过程</p>
-<h3 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h3><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><ol>
+<h2 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h2><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol>
 <li>编译器重排序（<em>编译器重排序层面</em>）</li>
 <li>指令级重排序（<em>处理器重排序层面</em>，现代处理器采用指令级并行技术，操作间无数据依赖，则可以调整操作指令执行顺序）</li>
 <li>内存系统重排序（<em>处理器重排序层面</em>，处理器使用缓存和读写缓冲区，这种情况下加载存储操作可能是乱序的）</li>
 </ol>
 <p>需要注意的是：多个处理器操作的数据依赖性不被编译器和处理器考虑</p>
-<h4 id="JMM应对策略"><a href="#JMM应对策略" class="headerlink" title="JMM应对策略"></a>JMM应对策略</h4><p>提供内存屏障（Memory Barries），禁止一些特定类型的（编译器，处理器）重排序</p>
-<h4 id="处理器重排序规则"><a href="#处理器重排序规则" class="headerlink" title="处理器重排序规则"></a>处理器重排序规则</h4><table>
+<h3 id="JMM应对策略"><a href="#JMM应对策略" class="headerlink" title="JMM应对策略"></a>JMM应对策略</h3><p>提供内存屏障（Memory Barries），禁止一些特定类型的（编译器，处理器）重排序</p>
+<h3 id="处理器重排序规则"><a href="#处理器重排序规则" class="headerlink" title="处理器重排序规则"></a>处理器重排序规则</h3><table>
 <thead>
 <tr>
 <th>处理器</th>
@@ -189,7 +281,7 @@ function activateLightMode(){
 </tr>
 </tbody></table>
 <p>内存屏障：Load=&gt;确保数据的装载，Store=&gt;确保数据刷新（缓存数据刷新到主内存，也就是保证此数据对处理器可见）</p>
-<h4 id="内存屏障类型"><a href="#内存屏障类型" class="headerlink" title="内存屏障类型"></a>内存屏障类型</h4><p>LoadLoad, LoadStore, StoreStore, StoreLoad</p>
+<h3 id="内存屏障类型"><a href="#内存屏障类型" class="headerlink" title="内存屏障类型"></a>内存屏障类型</h3><p>LoadLoad, LoadStore, StoreStore, StoreLoad</p>
 <p>示例：Load1， LoadStore, Store1，Load1的数据装载先于Store1的数据刷新</p>
 <h3 id="重排序规则"><a href="#重排序规则" class="headerlink" title="重排序规则"></a>重排序规则</h3><blockquote>
 <p>jdk1.5开始采用JSR-133内存模型</p>
@@ -198,11 +290,12 @@ function activateLightMode(){
 <p>若存在A的结果对B可见则，AB操作必须有happens-before关系</p>
 <p>happens-before仅要求前一个操作（执行结果）对后一个操作可见，并不确保两个操作一定要先后执行</p>
 </blockquote>
-<p>相关规则：</p>
-<p>程序：线程中的每个操作happens-before其任意后续操作</p>
-<p>监视器锁规则：解锁happens-before加锁</p>
-<p>volatile变量：volatile域的写happens-before读</p>
+<h5 id="相关规则"><a href="#相关规则" class="headerlink" title="相关规则"></a>相关规则</h5><p>程序：线程中的每个操作happens-before于其任意后续操作</p>
+<p>监视器锁规则：解锁happens-before于加锁</p>
+<p>volatile变量：volatile域的写happens-before于读</p>
 <p>传递：A happens-before B, B happens-before C，则A happens-before C</p>
+<h5 id="JMM的处理"><a href="#JMM的处理" class="headerlink" title="JMM的处理"></a>JMM的处理</h5><p>会改变执行结果的重排序：JMM要求编译器，处理器必须禁止重排序操作</p>
+<p>不会改变执行结果的重排序：JMM不做限制</p>
 <h4 id="as-if-serial"><a href="#as-if-serial" class="headerlink" title="as-if-serial"></a>as-if-serial</h4><h5 id="语义"><a href="#语义" class="headerlink" title="语义"></a>语义</h5><p>无论如何重排序，（单线程）操作结果不可被改变，多线程情况下结果就不得保证了</p>
 <h2 id="顺序一致性"><a href="#顺序一致性" class="headerlink" title="顺序一致性"></a>顺序一致性</h2><p>JMM对正确同步的多线程程序提供保证：若程序是正确同步（广义，包括对常用同步原语的使用），程序的执行将具有顺序一致性。</p>
 <h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ol>
@@ -226,7 +319,9 @@ function activateLightMode(){
 </ul>
 <p>JSR-l33之前：long/double类型的读写拆分为32位的<strong>读写</strong></p>
 <p>JSR-l33：64位long/double类型变量写操作拆分为两个32位<strong>写</strong>操作，任意读操作都要保证原子性</p>
-<h1 id="Java中的技术支持"><a href="#Java中的技术支持" class="headerlink" title="Java中的技术支持"></a>Java中的技术支持</h1><h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>若一个字段被声明为volatile，Java线程内存模型会确保所有线程看到的这个变量的值是一一致的</p>
+<h1 id="Java中的技术支持"><a href="#Java中的技术支持" class="headerlink" title="Java中的技术支持"></a>Java中的技术支持</h1><h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><ul>
+<li>若一个字段被声明为volatile，Java线程内存模型会确保所有线程看到的这个变量的值是一一致的</li>
+</ul>
 <h3 id="语义-1"><a href="#语义-1" class="headerlink" title="语义"></a>语义</h3><ul>
 <li>当一个程序修改一个变量时，另外一个线程可以读到 这个修改的值（可以理解为轻量级的synchronized）</li>
 </ul>
@@ -244,7 +339,7 @@ function activateLightMode(){
 </ul>
 <h3 id="内存语义实现"><a href="#内存语义实现" class="headerlink" title="内存语义实现"></a>内存语义实现</h3><blockquote>
 <p>基于保守策略</p>
-<p>JSR-133前volatile并没有内存语义</p>
+<p>JSR-133前volatile并没有内存语义，<strong>为了提供比锁更加轻量级的线程之间的通信机制</strong></p>
 </blockquote>
 <p>写操作</p>
 <p>StoreStore | volatile写操作 | StoreLoad</p>
@@ -254,25 +349,47 @@ function activateLightMode(){
 </blockquote>
 <p>读操作</p>
 <p>LoadLoad | vlatile读操作 | LoadStore</p>
-<h3 id="语义底层变换"><a href="#语义底层变换" class="headerlink" title="语义底层变换"></a>语义底层变换</h3><p>编译解析</p>
+<p>编译解析</p>
 <ul>
 <li>对于volatile变量，转为汇编时会添加lock指令</li>
 </ul>
 <p>lock指令作用：</p>
 <ul>
-<li><p>当前处理器缓存行数据写回到系统内存</p>
-<ul>
+<li>当前处理器缓存行数据写回到系统内存<ul>
 <li>Lock前缀指令导致在执行指令期间，处理器可以独占任何共享内存。P6和目前的处理器，Lock指令一般不锁总线，若访问区域缓存在处理器内部，则锁住这块内存区域的缓存并写回到内存，使用缓存一致性协议确保修改的一致性，也就是“缓存锁定”</li>
 </ul>
 </li>
-<li><p>其他CPU中缓存的当前地址变无效</p>
-</li>
+<li>其他CPU中缓存的当前地址变无效</li>
 </ul>
+<blockquote>
+<p>intel手册中对lock前缀的说明：（来自Java并发编程的艺术）</p>
+<ol>
+<li>Pentium4,IntelXeon,P6处理器开始，Intel使用缓存锁定确保指令执行的原子性</li>
+<li>禁止该指令，与之前和之后的读写指令重排序</li>
+<li>写缓冲区数据刷新到内存中</li>
+</ol>
+</blockquote>
 <p>执行</p>
 <ul>
 <li>处理器不直接和内存通信，先执行写回内存的操作</li>
 <li>为确保数据的一致性，使用缓存一致性协议，嗅探总线上的值判断当前值是否过期（若过期就设置当前处理器缓存行为无效状态，当对这个数据修改时就会重新从系统内存中读取）</li>
 </ul>
+<h3 id="java的CAS"><a href="#java的CAS" class="headerlink" title="java的CAS"></a>java的CAS</h3><blockquote>
+<p>获取锁之前会读volatile类型state变量</p>
+</blockquote>
+<p>编译器</p>
+<ul>
+<li>不对volatile读与volatile读后的任意内存操作重排序</li>
+<li>不对volatile写与volatile写后的任意内存操作重排序</li>
+</ul>
+<p>处理器</p>
+<blockquote>
+<p>对应x86的常见处理器</p>
+</blockquote>
+<ul>
+<li>依据源码（automiv_windows_x86.inline.hpp）的显示，处理器会依据当前处理器类型决定是否使用LOCK前缀（单处理器中其本身就会维护处理器内的顺序一致性，LOCK屏障多此一举），这个操作也是一定程度的优化（即，在不需要的时候消除锁）</li>
+</ul>
+<p>正因为以上操作使用了volatile，而volatile又具有其特性，CAS借助对volatile的操作实现了volatile所具有的内存语义</p>
 <h3 id="volatile使用优化"><a href="#volatile使用优化" class="headerlink" title="volatile使用优化"></a>volatile使用优化</h3><ul>
 <li>追加字节使其满足当前处理设备的高速缓存行</li>
 </ul>
@@ -405,6 +522,7 @@ function activateLightMode(){
     </tr>
 </table>
 
+
 <h3 id="锁的优化"><a href="#锁的优化" class="headerlink" title="锁的优化"></a>锁的优化</h3><p>之前也提到了，synchronized关键字对语句块的处理采用了两个字节码指令，而这两个指令在使用上代价是比较高，jdk1.6中锁具有四种状态，分别是：无锁—&gt;偏向锁—&gt;轻量级锁—&gt;重量级锁，随着竞争状态升级。偏向锁—&gt;轻量级锁过程不可逆。</p>
 <h4 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h4><h5 id="获取锁"><a href="#获取锁" class="headerlink" title="获取锁"></a>获取锁</h5><blockquote>
 <p>当一个线程访问同步块代码时</p>
@@ -503,6 +621,23 @@ function activateLightMode(){
 <td>追求吞吐量，同步块执行时间长</td>
 </tr>
 </tbody></table>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h3 id="重排序规则-1"><a href="#重排序规则-1" class="headerlink" title="重排序规则"></a>重排序规则</h3><h4 id="编译器和处理器"><a href="#编译器和处理器" class="headerlink" title="编译器和处理器"></a>编译器和处理器</h4><ol>
+<li>构造函数的写入，随后将这个构造对象的引用赋值给一个引用变量，这两个操作不许进行重排序（确保对象引用在暴露给其他线程之前已被正确初始化）</li>
+<li>初次读一个包含final域的对象的引用，与随后初次读这个final域，这两个操作不许重排序</li>
+</ol>
+<h4 id="写final域"><a href="#写final域" class="headerlink" title="写final域"></a>写final域</h4><ul>
+<li>禁止将final域的写重排序到构造函数之外</li>
+</ul>
+<p>实现</p>
+<ul>
+<li>JMM：禁止将final域的写重排序到构造函数之外</li>
+<li>编译器：增加StoreStore（final写之后，return之前）</li>
+</ul>
+<h4 id="读final域"><a href="#读final域" class="headerlink" title="读final域"></a>读final域</h4><ul>
+<li>JMM：读对象引用和初次读该对象包含的final域</li>
+<li>编译器：增加LoadLoad(final域读操作之前)</li>
+</ul>
+<h3 id="内存语义"><a href="#内存语义" class="headerlink" title="内存语义"></a>内存语义</h3><p>旧内存模型中，final域的值可能被改变（重排序未做保证，当线程去看是可能是默认值，随后初始化，导致两次读到的初始化值不同，String 的内部定义就是使用final修饰的），JSR-133中通过增加重排序的规则确保其初始化结果是确定且正确的（只要线程可以拿到初始化后的对象，那么它的final域一定是初始化的值）</p>
 <h1 id="原子操作实现原理"><a href="#原子操作实现原理" class="headerlink" title="原子操作实现原理"></a>原子操作实现原理</h1><h2 id="处理器操作"><a href="#处理器操作" class="headerlink" title="处理器操作"></a>处理器操作</h2><ul>
 <li><p>总线锁</p>
 <p>  处理器发出LOCK # 信号，收到信号的处理器的请求将被阻塞住</p>
